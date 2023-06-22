@@ -33,3 +33,4 @@ arm-none-eabi-objcopy -O binary executable.elf executable.bin
 qemu-system-arm -M versatilepb -m 128M -nographic -kernel executable.bin
 ```
 ### Working Code Image:
+![Working_code](https://github.com/Mo-Alsehli/UART-sendString-VersatilePB-arm926ej-s/assets/98949843/db957607-be2b-4af9-a8b3-3437722b9d5f)
