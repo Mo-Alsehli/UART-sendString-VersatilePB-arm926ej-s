@@ -20,16 +20,21 @@
 - Qemu System Arm to run the executable on.
 
 ### Commands used with the tools:
+
+_// Creation Of Static Liberary._
 ```
-// Creation Of Static Liberary.
 arm-none-eabi-gcc -c -mcpu=arm926ej-s -I . uart.c -o uart.o
 arm-none-eabi-ar rcs can.a uart.o
-// Compilation Process To Generate .elf file
+```
+_// Compilation Process To Generate .elf file_
+```
 arm-none-eabi-gcc -c -mcpu=arm926ej-s main.c -o main.o
 arm-none-eabi-as -mcpu=arm926ej-s startup.s startup.o`
 arm-none-eabi-ld -T linker_script.ld startup.o main.c can.a -o executable.elf -Map=map_file
 arm-none-eabi-objcopy -O binary executable.elf executable.bin
-// Running Code On Qemu Simulator
+```
+_// Running Code On Qemu Simulator_
+```
 qemu-system-arm -M versatilepb -m 128M -nographic -kernel executable.bin
 ```
 ### Working Code Image:
